@@ -1,0 +1,63 @@
+/*
+ * @author Rachel DeCouto
+ * @version 01.10.2020
+ * 
+ */
+import java.util.Scanner;
+import java.util.Random;
+public class GameConsole {
+	/**this java program will work as a gaming console that has 4 games on it.
+	**Game 1 will be a simple Rock Paper Scissors game
+	*Game 2 will be a guessing game
+	*Game 3 will be a Simple Shop Program
+	*Game 4 will be a Fortune Teller game
+	**/
+
+	public static void main(String[] args) {
+		//import scanner to read user input
+		Scanner in = new Scanner(System.in);
+		//import random number generator for games
+		 Random rn = new Random();
+		//first screen to display on the console
+		System.out.println("Welcome!\n \t If you would like to play a game, please choose from the following options:");
+		//call main menu method
+		MainMenu();
+		int usrChoice = in.nextInt();
+	 switch (usrChoice) {	 
+	 case 1 :
+		 //Rock Paper Scissors game
+		 System.out.println("Rock, Paper, Scissors! Choose either Rock (1), Paper (2), or Scissors (3)");
+		  int UsrRPS = in.nextInt();
+		 int CompNum= rn.nextInt(3)+1;
+		 System.out.println(CompNum);
+		
+		 if  (UsrRPS == CompNum) {
+			 System.out.println("You tied! Try again");
+		 }
+		 else 
+				 if (CompNum==1) {
+			 if (UsrRPS == 2) {
+				 System.out.println("Computer Chose Rock, you win! ");}
+			 else {
+				 System.out.println("Computer Chose Rock, you lose!");}}
+		 if (CompNum ==2)  {
+			 if (UsrRPS == 3) {
+				 System.out.println("Computer Chose Paper, you win! ");}
+			 else {
+				 System.out.println("Computer Chose Paper, you lose!");}}
+		 if(CompNum==3){
+			 if (UsrRPS == 1) {
+				 System.out.println("Computer Chose Scissors, you win! ");}
+			 else {
+				 System.out.println("Computer Chose Scissors, you lose!");}}
+		 if (0>CompNum || 3<CompNum) {
+			 System.out.println("That is not an option");}
+			
+	 }
+	 }
+	
+public static void MainMenu() {
+	//print the main menu before each choice and after each game is played
+	System.out.println(" Game options: \n \t Select 1 for Rock Paper Scissors\n\t Select 2 for a Guessing Game\n\t Select 3 to go Shopping\n\t Select 4 for your Fortune\n\t Select 0 to quit");
+}
+}
