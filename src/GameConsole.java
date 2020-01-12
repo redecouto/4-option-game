@@ -25,12 +25,12 @@ public class GameConsole {
 		int usrChoice = in.nextInt();
 	 switch (usrChoice) {	 
 	 case 1 :
-		 //Rock Paper Scissors game
+		 //Rock Paper Scissors game 1
 		 System.out.println("Rock, Paper, Scissors! Choose either Rock (1), Paper (2), or Scissors (3)");
 		  int UsrRPS = in.nextInt();
 		 int CompNum= rn.nextInt(3)+1;
 		 System.out.println(CompNum);
-		
+		//ifelse block to play game
 		 if  (UsrRPS == CompNum) {
 			 System.out.println("You tied! Try again");
 		 }
@@ -52,7 +52,13 @@ public class GameConsole {
 				 System.out.println("Computer Chose Scissors, you lose!");}}
 		 if (0>CompNum || 3<CompNum) {
 			 System.out.println("That is not an option");}
-			
+		 
+	 case 2 :
+		 //Guessing Game
+		 System.out.println("Guessing Game!\n"
+		 		+ " The Computer will choose a number 1 - 10, and you have to guess what number it chose!\n If you guess right you win!"
+		 		+ "\n The computer has chosen its number\n What number do you think it is? \n Guess: ");
+			int usrGuess = in.nextInt();
 	 }
 	 }
 	
