@@ -1,6 +1,6 @@
 /*
  * @author Rachel DeCouto
- * @version 01.10.2020
+ * @version 01.13.2020
  * 
  */
 import java.util.Scanner;
@@ -17,28 +17,25 @@ public class GameConsole {
 		//import scanner to read user input
 		Scanner in = new Scanner(System.in);
 		//import random number generator for games
-		 Random rn = new Random();
 		//first screen to display on the console
 		System.out.println("Welcome!\n \t If you would like to play a game, please choose from the following options:");
 		//call main menu method
-		MainMenu();
-		int usrChoice = in.nextInt();
+		int usrChoice = 1;
+		while (usrChoice > 0|| usrChoice<5) {
+			MainMenu();
+	 usrChoice = in.nextInt();
+	 
 	 switch (usrChoice) {	 
 	 case 1 :
 		 //Rock Paper Scissors game 1
 		 RockPaperScissors();
-		 MainMenu();
-		int newChoice= in.nextInt();
-		 usrChoice=newChoice;
 		break;
 	 case 2 :
 		 //Guessing Game
 		GuessingGame();
-		 MainMenu();
-		 usrChoice= in.nextInt();
-		 break;
+			 break;
 	 }
-	 }
+	 }}
 	
 public static void MainMenu() {
 	//print the main menu before each choice and after each game is played
@@ -56,24 +53,30 @@ public static void RockPaperScissors() {
 	 if  (UsrRPS == CompNum) {
 		 System.out.println("You tied! Try again");
 	 }
+	 if (0>UsrRPS || 3<UsrRPS) {
+		 System.out.println("That is not an option");}
 	 else {
-			 if (CompNum==1) {
-		 if (UsrRPS == 2) {
-			 System.out.println("Computer Chose Rock, you win! ");}
-		 else {
-			 System.out.println("Computer Chose Rock, you lose!");}}
-	 if (CompNum ==2)  {
+			 switch(CompNum) {
+			 case 1:
+				 if (UsrRPS == 2) {
+					 System.out.println("Computer Chose Rock, you win! ");}
+				 else {
+					 System.out.println("Computer Chose Rock, you lose!");}
+			 break;
+			 case 2:
 		 if (UsrRPS == 3) {
 			 System.out.println("Computer Chose Paper, you win! ");}
 		 else {
-			 System.out.println("Computer Chose Paper, you lose!");}}
-	 if(CompNum==3){
+			 System.out.println("Computer Chose Paper, you lose!");}
+		 break;
+		 
+			 case 3:
 		 if (UsrRPS == 1) {
 			 System.out.println("Computer Chose Scissors, you win! ");}
 		 else {
-			 System.out.println("Computer Chose Scissors, you lose!");}}
-	 if (0>CompNum || 3<CompNum) {
-		 System.out.println("That is not an option");}
+			 System.out.println("Computer Chose Scissors, you lose!");}
+			break; }
+	
 	
 }}
 public static void GuessingGame() {
